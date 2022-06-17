@@ -1,0 +1,18 @@
+# build folder of project
+dist
+
+# Local and ignore files
+.vscode
+.prettierrc
+
+# Json/JS/Lock files
+yarn.lock
+.eslintrc.cjs
+package.json
+.eslintrc.json
+postcss.config.js
+tailwind.config.js
+commitlint.config.js
+
+# MD files
+README.md
