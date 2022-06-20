@@ -8,13 +8,13 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
-      '@stores': fileURLToPath(new URL('./src/stores', import.meta.url)),
+      '@assets': fileURLToPath(new URL('./src/client/assets', import.meta.url)),
+      '@stores': fileURLToPath(new URL('./src/client/stores', import.meta.url)),
       '@components': fileURLToPath(
-        new URL('./src/components', import.meta.url)
+        new URL('./src/client/components', import.meta.url)
       ),
-      '@views': fileURLToPath(new URL('./src/views', import.meta.url)),
-      '@router': fileURLToPath(new URL('./src/router', import.meta.url)),
+      '@views': fileURLToPath(new URL('./src/client/views', import.meta.url)),
+      '@router': fileURLToPath(new URL('./src/client/router', import.meta.url)),
     },
   },
 });
