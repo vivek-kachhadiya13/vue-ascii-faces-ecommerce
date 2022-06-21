@@ -41,10 +41,12 @@ export default {
 
 <template>
   <LoadingCard v-if="loading" />
-  <div class="p-10 grid grid-cols-1 lg:grid-cols-3 gap-5" v-else>
-    <ProductCard
-      v-for="product in products"
-      :key="product.id"
-      :product="product" />
-  </div>
+  <Transition name="slide-fade">
+    <div class="p-10 grid grid-cols-1 lg:grid-cols-3 gap-5" v-if="!loading">
+      <ProductCard
+        v-for="product in products"
+        :key="product.id"
+        :product="product" />
+    </div>
+  </Transition>
 </template>
