@@ -15,6 +15,10 @@ export default defineConfig({
       ),
       '@views': fileURLToPath(new URL('./src/client/views', import.meta.url)),
       '@router': fileURLToPath(new URL('./src/client/router', import.meta.url)),
+      '@utils': fileURLToPath(new URL('./src/client/utils', import.meta.url)),
+      '@constants': fileURLToPath(
+        new URL('./src/client/constants', import.meta.url)
+      ),
     },
   },
 });

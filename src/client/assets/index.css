@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  @apply flex-col text-base min-h-[200px] overflow-hidden font-normal relative h-[200px] rounded-md lg:w-[574px] w-auto;
+}
+.card-image {
+  @apply rounded-md h-[200px];
+}
+.card-footer {
+  @apply bg-[#00000099] text-white h-[74px] p-4 flex items-center absolute bottom-0 lg:w-[574px] w-full justify-between py-5;
+}
+.card-footer-title {
+  @apply p-1 opacity-80;
+}
+.card-footer-text {
+  @apply p-1 opacity-80 text-xs;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
