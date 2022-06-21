@@ -6,6 +6,7 @@ import { debounce } from 'throttle-debounce';
 import { ref, onMounted, onUnmounted } from 'vue';
 import ProductCard from '@components/ProductCard.vue';
 import LoadingCard from '@components/LoadingCard.vue';
+import EndOfCatalogueCard from '@components/EndOfCatalogueCard.vue';
 
 import {
   API_URL,
@@ -19,6 +20,7 @@ export default {
   components: {
     ProductCard,
     LoadingCard,
+    EndOfCatalogueCard,
   },
   setup() {
     // State
@@ -83,10 +85,10 @@ export default {
 
       loading.value = false;
     }
-
     return {
       products,
       loading,
+      isEndOfCatalogue,
     };
   },
 };
@@ -104,5 +106,6 @@ export default {
   </Transition>
   <div class="flex justify-center items-center">
     <LoadingCard v-if="loading" />
+    <EndOfCatalogueCard v-if="isEndOfCatalogue" />
   </div>
 </template>
