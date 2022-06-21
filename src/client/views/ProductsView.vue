@@ -44,8 +44,9 @@ export default {
   <Transition name="slide-fade">
     <div class="p-10 grid grid-cols-1 lg:grid-cols-3 gap-5" v-if="!loading">
       <ProductCard
-        v-for="product in products"
+        v-for="(product, index) in products"
         :key="product.id"
+        :index="index"
         :product="product" />
     </div>
   </Transition>

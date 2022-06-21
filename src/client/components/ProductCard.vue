@@ -1,11 +1,19 @@
 <script setup>
+import { computed } from 'vue';
 import { ShoppingCartIcon } from '@heroicons/vue/outline';
 
 import { fromCents } from '@utils/money';
 import { fromNow } from '@utils/timestamp';
 
-defineProps({
+import AdCard from '@components/AdCard.vue';
+
+const props = defineProps({
   product: Object,
+  index: Number,
+});
+
+const isShowAd = computed(() => {
+  return (props.index + 1) % 20 === 0;
 });
 </script>
 
@@ -33,4 +41,5 @@ defineProps({
       </div>
     </div>
   </div>
+  <AdCard :key="`ad_${index}`" v-if="isShowAd" />
 </template>
