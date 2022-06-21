@@ -6,6 +6,7 @@ import CommonHeader from '@components/layout/CommonHeader.vue';
 
 <template>
   <CommonHeader />
-
-  <RouterView />
+  <main class="layout__content">
+    <RouterView />
+  </main>
 </template>
