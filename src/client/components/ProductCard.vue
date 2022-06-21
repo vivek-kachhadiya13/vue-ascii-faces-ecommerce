@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue';
-
 import { ShoppingCartIcon } from '@heroicons/vue/outline';
 
 import { fromCents } from '@utils/money';
@@ -9,17 +7,13 @@ import { fromNow } from '@utils/timestamp';
 defineProps({
   product: Object,
 });
-
-const faceSize = computed(() => {
-  return (size) => `text-[${size.toString()}px]`;
-});
 </script>
 
 <template>
   <div class="flex-col drop-shadow-lg rounded-lg lg:w-[440px] w-auto relative">
     <div
       class="rounded-lg w-full h-[220px] flex justify-center pt-[60px] bg-slate-50">
-      <p :class="faceSize(product.size)">
+      <p :style="{ fontSize: `${product.size}px` }">
         {{ product.face }}
       </p>
     </div>
