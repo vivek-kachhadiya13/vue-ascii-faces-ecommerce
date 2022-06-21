@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const jsonServer = require('json-server');
 
 const fetchData = require('./index.js');
@@ -21,13 +19,11 @@ async function createServer() {
   const middleware = jsonServer.defaults();
 
   // rewrite the routes
-  const routes = fs.readFileSync(path.join('src/server/', 'routes.json'), {
-    encoding: 'utf8',
-  });
-  const rewriter = jsonServer.rewriter(routes);
+  const rewriter = jsonServer.rewriter(require('./routes.json'));
 
   // generate random data and give it to json-server
   const data = fetchData();
+
   const router = jsonServer.router(data);
 
   // use default and our middleware
