@@ -22,7 +22,6 @@ watch(selectedProductFilter, async (newVal) => {
   products.sortBy = newVal;
   await products.fetch();
 });
-
 </script>
 
 <template>
