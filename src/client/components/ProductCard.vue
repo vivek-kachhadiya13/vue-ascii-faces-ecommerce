@@ -38,7 +38,8 @@ const isShowAd = computed(() => {
         </p>
       </div>
       <div
-        class="bg-[#ff4081] rounded-full p-1 h-14 w-14 absolute flex justify-center items-center top-[-30px] right-3 cursor-pointer" @click="cart.addProduct(product.id)">
+        class="bg-[#ff4081] rounded-full p-1 h-14 w-14 absolute flex justify-center items-center top-[-30px] right-3 cursor-pointer"
+        @click="cart.addProduct(product.id)">
         <ShoppingCartIcon class="h-8 w-8" />
       </div>
     </div>
