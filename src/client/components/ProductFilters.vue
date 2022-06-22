@@ -29,7 +29,7 @@ watch(selectedProductFilter, async (newVal) => {
     <div class="relative">
       <ListboxButton>
         <div class="md:w-6 md:h-6 w-5 h-5 rounded-full text-2xl mr-3 mt-1">
-          <MenuAlt2Icon />
+          <MenuAlt2Icon class="text-white" />
         </div>
       </ListboxButton>
       <transition
@@ -46,7 +46,7 @@ watch(selectedProductFilter, async (newVal) => {
             as="template">
             <li
               :class="[
-                active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+                active ? 'bg-primary text-dark' : 'text-dark',
                 'relative cursor-default select-none py-2 pl-10 pr-4',
               ]">
               <span
@@ -58,7 +58,7 @@ watch(selectedProductFilter, async (newVal) => {
               >
               <span
                 v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                class="absolute inset-y-0 left-0 flex items-center pl-3 text-dark">
                 <CheckIcon class="h-5 w-5" aria-hidden="true" />
               </span>
             </li>
