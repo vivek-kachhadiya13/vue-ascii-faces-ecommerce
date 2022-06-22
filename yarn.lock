@@ -203,6 +203,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@headlessui/vue@^1.6.5":
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.6.5.tgz#d34005e7a19cac5cc95df82420a20bee529b65a1"
+  integrity sha512-C/BeTVuowTDLkGgUd6UfiPZVDLdR7OTnd8o4wF37Ub9Js1uhQ3XSTfitdZvlJALUqeQ30j+5Hk3KyjVDLQ3GYQ==
+
 "@heroicons/vue@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-1.0.6.tgz#d8b90734b436eb5a87f40cc300b64a0fb0031f7f"
