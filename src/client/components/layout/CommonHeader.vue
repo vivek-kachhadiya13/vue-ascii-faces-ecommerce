@@ -2,8 +2,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
-import { ShoppingCartIcon } from '@heroicons/vue/solid';
-
+import CartSidebar from '@components/CartSidebar.vue';
 import ProductFilters from '@components/ProductFilters.vue';
 
 const route = useRoute();
@@ -23,11 +22,7 @@ const isShowProductFilter = computed(() => {
         </a>
         <div class="flex items-center">
           <ProductFilters v-if="isShowProductFilter" />
-          <button
-            @click="toggleCartSidebar = !toggleCartSidebar"
-            class="w-6 h-6 rounded-full text-2xl hover:bg-[#9e9e9e33]">
-            <ShoppingCartIcon />
-          </button>
+          <CartSidebar />
         </div>
       </nav>
     </div>
