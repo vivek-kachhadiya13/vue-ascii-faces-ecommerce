@@ -1,5 +1,14 @@
 <script setup>
+import { onMounted } from 'vue';
+
+import { products } from '@stores/products';
+
 import AdCard from '@components/AdCard.vue';
+
+// pre-emptively fetch products
+onMounted(async () => {
+  await products.fetch();
+});
 </script>
 
 <template>

@@ -26,8 +26,7 @@ export default {
      * Handle event when component will mount
      */
     onMounted(() => {
-      getProductList();
-
+      if (!products.items.length) getProductList();
       // save mdl layout content
       layoutContent.value = document.querySelector('.layout__content');
 
@@ -49,7 +48,8 @@ export default {
      */
     let handleScroll = debounce(100, () => {
       // return if is fetching or is at end, no need to fetch again
-      if (products.isLoading) {
+      // Prevent from fetching data on scroll if it is EndOfCatalogue
+      if (products.isLoading || products.isEndOfCatalogue) {
         return;
       }
       // when reached the fetch threshold
@@ -74,7 +74,7 @@ export default {
 
 <template>
   <Transition name="slide-fade">
-    <div class="p-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+    <div class="md:p-10 p-4 grid grid-cols-1 lg:grid-cols-3 gap-5">
       <ProductCard
         v-for="(product, index) in products.items"
         :key="product.id"
@@ -84,6 +84,6 @@ export default {
   </Transition>
   <div class="flex justify-center items-center">
     <LoadingCard v-if="products.isLoading" />
-    <EndOfCatalogueCard v-if="products.isEndOfCatalogue" />
+    <EndOfCatalogueCard v-else-if="products.isEndOfCatalogue" />
   </div>
 </template>

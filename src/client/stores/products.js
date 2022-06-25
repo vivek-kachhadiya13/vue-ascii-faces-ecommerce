@@ -11,9 +11,6 @@ export const products = reactive({
   isEndOfCatalogue: false,
 
   async fetch() {
-    // Prevent from fetching data on scroll if it is EndOfCatalogue
-    if (this.isEndOfCatalogue) return;
-
     this.isLoading = !this.isLoading;
 
     const productsList = await fetch(

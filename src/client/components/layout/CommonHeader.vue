@@ -14,10 +14,10 @@ const isShowProductFilter = computed(() => {
 
 <template>
   <header class="sticky top-0 w-screen bg-dark z-10">
-    <div class="px-10">
+    <div class="md:px-10 px-4">
       <nav class="flex relative items-center justify-between h-16 mt-0">
         <a
-          class="flex items-center whitespace-nowrap text-xl text-light"
+          class="flex items-center whitespace-nowrap md:text-xl text-md text-light"
           href="/">
           <span class="mr-3">\{^_^}/</span>
           ascii faces ecommerce
